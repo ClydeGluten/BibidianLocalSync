@@ -2,8 +2,6 @@
 
 Local Vault Sync synchronizes an Obsidian vault between a desktop host and desktop or mobile clients on the same local network.
 
-Version 2 uses a host-coordinated protocol with content hashes, version vectors, encrypted sessions, binary-file support, conflict copies, safe deletion, and verified transactional flush backups.
-
 ## Requirements
 
 - Obsidian 1.11.4 or newer.
@@ -14,6 +12,13 @@ Version 2 uses a host-coordinated protocol with content hashes, version vectors,
 Protocol v2 is intentionally incompatible with version 1. Upgrade every device together.
 
 ## Setup
+### If you are on PC:
+Clone the repo, copy the files into your Obsidian plugins folder
+
+### If you are on a smartphone:
+Personally recommended way is to connect you phone to a computer, locate your vault's plugins folder and copy files manually.
+In the future I plan to add it to Obsidian's built in market.
+
 
 ### Host
 
@@ -79,12 +84,6 @@ Limitations:
 - The current pre-shared-key session design does not provide forward secrecy. Rotate the pairing key if it may have been exposed.
 - A deliberately authorized peer can submit vault changes; only pair devices you control.
 - This plugin is not a substitute for independent backups.
-
-## Migrating from version 1
-
-The plaintext v1 shared secret is deliberately not migrated. On first v2 load, generate a new pairing key on the host and pair every client again.
-
-Before upgrading valuable vaults, make an independent copy and test v2 with a disposable vault on each target platform.
 
 ## Development
 
